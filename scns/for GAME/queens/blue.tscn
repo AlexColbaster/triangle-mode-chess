@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://interface/col.tres" type="Shape2D" id=1]
+[ext_resource path="res://scrs/FigureButton.gd" type="Script" id=2]
+[ext_resource path="res://pic/figures/blue/warer.svg" type="Texture" id=3]
+[ext_resource path="res://scns/for GAME/queens/AnimationPlayer.gd" type="Script" id=4]
+[ext_resource path="res://pic/figures/blue/acher.svg" type="Texture" id=5]
+[ext_resource path="res://scrs/Figure.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=1]
+length = 1.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 180.0, 540.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node1:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 360.0, 0.0 ]
+}
+
+[node name="blue" type="KinematicBody2D"]
+position = Vector2( 0, 23 )
+script = ExtResource( 6 )
+
+[node name="queen" type="Node2D" parent="."]
+
+[node name="Node2" type="Node2D" parent="queen"]
+rotation = 3.14159
+
+[node name="acher" type="Sprite" parent="queen/Node2"]
+position = Vector2( 0, -14 )
+scale = Vector2( 0.15, 0.15 )
+z_index = 5
+texture = ExtResource( 5 )
+
+[node name="Node1" type="Node2D" parent="queen"]
+rotation = 6.28319
+
+[node name="warer" type="Sprite" parent="queen/Node1"]
+position = Vector2( 0, -10 )
+scale = Vector2( 0.15, 0.15 )
+z_index = 5
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="queen"]
+autoplay = "Новая анимация"
+playback_process_mode = 0
+"anims/Новая анимация" = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="q" type="CollisionShape2D" parent="."]
+shape = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="q"]
+scale = Vector2( 0.2, 0.2 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="q/Area2D"]
+visible = false
+scale = Vector2( 280, 280 )
+shape = ExtResource( 1 )
+
+[connection signal="input_event" from="q/Area2D" to="q/Area2D" method="_on_Area2D_input_event"]

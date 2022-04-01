@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Michael Strike - Main loop(OST Ghosy_ the Path to the Fields of Iaru.mp3-c6845306978e64de540837cac9dd2cb9.mp3str"
+
+[deps]
+
+source_file="res://audio/Michael Strike - Main loop(OST Ghosy_ the Path to the Fields of Iaru.mp3"
+dest_files=[ "res://.import/Michael Strike - Main loop(OST Ghosy_ the Path to the Fields of Iaru.mp3-c6845306978e64de540837cac9dd2cb9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

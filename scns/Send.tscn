@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scrs/send.gd" type="Script" id=1]
+
+[node name="send" type="Node"]
+script = ExtResource( 1 )
+
+[node name="1" type="HTTPRequest" parent="."]
+
+[node name="2" type="HTTPRequest" parent="."]
+
+[node name="3" type="HTTPRequest" parent="."]
+
+[node name="4" type="HTTPRequest" parent="."]
+
+[node name="5" type="HTTPRequest" parent="."]
+
+[connection signal="request_completed" from="1" to="." method="_on_1_request_completed"]
+[connection signal="request_completed" from="2" to="." method="_on_2_request_completed"]
+[connection signal="request_completed" from="3" to="." method="_on_3_request_completed"]
+[connection signal="request_completed" from="4" to="." method="_on_4_request_completed"]
+[connection signal="request_completed" from="5" to="." method="_on_5_request_completed"]

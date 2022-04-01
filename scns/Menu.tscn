@@ -1,0 +1,916 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://interface/font70.tres" type="DynamicFont" id=1]
+[ext_resource path="res://interface/font300.tres" type="DynamicFont" id=2]
+[ext_resource path="res://interface/font100.tres" type="DynamicFont" id=3]
+[ext_resource path="res://interface/theme.tres" type="Theme" id=5]
+[ext_resource path="res://pic/vk.png" type="Texture" id=6]
+[ext_resource path="res://scrs/Menu.gd" type="Script" id=7]
+[ext_resource path="res://pic/point.svg" type="Texture" id=8]
+[ext_resource path="res://pic/inf/strelka inv.png" type="Texture" id=9]
+[ext_resource path="res://scrs/Button.gd" type="Script" id=10]
+[ext_resource path="res://pic/inf/strelka.png" type="Texture" id=11]
+[ext_resource path="res://pic/loading.svg" type="Texture" id=12]
+[ext_resource path="res://pic/dis.png" type="Texture" id=13]
+[ext_resource path="res://interface/font50.tres" type="DynamicFont" id=15]
+
+[sub_resource type="StreamTexture" id=285]
+flags = 4
+
+[sub_resource type="Animation" id=4]
+resource_name = "JH_to_lobby"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../lobby:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.7, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../lobby:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../online_JH:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../online_JH:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../lobby/red:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.7, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../lobby/green:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.7, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../lobby/blue:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.7, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../online_JH:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../online_JH:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../online_JH:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../lobby:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../lobby:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../online_JH/Loading:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../online_JH/Loading:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Loading1:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Loading2:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("../lobby/green:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("../lobby/red:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("../lobby/blue:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=237]
+resource_name = "loading"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../online_JH/Loading:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "login_to_JH"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../online_JH:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.7, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../online_JH:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="menu" type="Control"]
+script = ExtResource( 7 )
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 4, 4 )
+smoothing_enabled = true
+
+[node name="Panel" type="Control" parent="."]
+show_behind_parent = true
+margin_left = -5000.0
+margin_top = -2200.0
+margin_right = 5000.0
+margin_bottom = -200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dis" type="TextureButton" parent="Panel"]
+margin_left = 5000.0
+margin_top = -40.0
+margin_right = 6024.0
+margin_bottom = 984.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vk" type="TextureButton" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -1040.0
+margin_right = 512.0
+margin_bottom = -16.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -3824.0
+margin_top = -922.0
+margin_right = -1274.0
+margin_bottom = -842.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = ExtResource( 1 )
+text = "TMC by Colbuster"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="user" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -3824.0
+margin_top = -922.0
+margin_right = -1274.0
+margin_bottom = -842.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = ExtResource( 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="login" type="LineEdit" parent="."]
+margin_left = -2500.0
+margin_top = -1000.0
+margin_bottom = -877.0
+rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 1 )
+placeholder_text = "введите имя (нельзя использовать пробелы)"
+
+[node name="next" type="TextureButton" parent="login"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -214.0
+margin_top = 157.0
+margin_right = 644.0
+margin_bottom = 434.0
+rect_scale = Vector2( 0.5, 0.5 )
+focus_mode = 0
+enabled_focus_mode = 0
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next" type="Label" parent="login/next"]
+anchor_top = -0.08
+anchor_right = 1.0
+anchor_bottom = 1.034
+margin_left = -1.0
+margin_top = 0.160002
+margin_right = -573.0
+margin_bottom = -208.418
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = ExtResource( 1 )
+text = "начать"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="online_JH" type="Control" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -2500.0
+margin_top = -1500.0
+margin_right = 2500.0
+margin_bottom = 1500.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="choose" type="Label" parent="online_JH"]
+anchor_top = 0.122
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 34.0
+margin_right = -2500.0
+margin_bottom = -987.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 3 )
+text = "выберите сервер"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="num" type="Label" parent="online_JH"]
+anchor_top = 0.122
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 2000.0
+margin_top = 334.0
+margin_right = -2500.0
+margin_bottom = -402.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 2 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="error" type="Label" parent="online_JH"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -600.0
+margin_right = -2500.0
+margin_bottom = -3371.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 3 )
+text = "на этом сервере уже началась игра
+пожалуйста, выберите другой"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="online_JH"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="minus" type="TextureButton" parent="online_JH/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 1180.0
+margin_top = 690.0
+margin_right = 1980.0
+margin_bottom = 1490.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 11 )
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="plus" type="TextureButton" parent="online_JH/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 2980.0
+margin_top = 690.0
+margin_right = 3780.0
+margin_bottom = 1490.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 9 )
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="to_lobby" type="TextureButton" parent="online_JH/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 1880.0
+margin_top = 1590.0
+margin_right = 3080.0
+margin_bottom = 2090.0
+texture_normal = SubResource( 285 )
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="online_JH/Control/to_lobby"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 40.0
+margin_right = -800.0
+margin_bottom = -310.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = ExtResource( 3 )
+text = "играть"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="online_JH/Control/to_lobby"]
+wait_time = 0.001
+one_shot = true
+
+[node name="Loading" type="Sprite" parent="online_JH"]
+visible = false
+position = Vector2( 2500, 3000 )
+texture = ExtResource( 12 )
+offset = Vector2( 0, -65 )
+
+[node name="lobby" type="Control" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -1200.0
+margin_bottom = -1200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="TextureButton" parent="lobby"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2000.0
+margin_top = -290.0
+margin_right = -1000.0
+margin_bottom = 110.0
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="choose" type="Label" parent="lobby/red"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -500.0
+margin_bottom = -200.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 15 )
+text = "ИИ"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="r" type="TextureRect" parent="lobby/red"]
+modulate = Color( 0.752941, 0.376471, 0.188235, 1 )
+show_behind_parent = true
+margin_left = 100.0
+margin_top = -200.0
+margin_right = 900.0
+margin_bottom = 600.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="green" type="TextureButton" parent="lobby"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -500.0
+margin_top = -290.0
+margin_right = 500.0
+margin_bottom = 110.0
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="choose" type="Label" parent="lobby/green"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -500.0
+margin_bottom = -200.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 15 )
+text = "ИИ"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="g" type="TextureRect" parent="lobby/green"]
+modulate = Color( 0.188235, 0.752941, 0.376471, 1 )
+show_behind_parent = true
+margin_left = 100.0
+margin_top = -200.0
+margin_right = 900.0
+margin_bottom = 600.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="blue" type="TextureButton" parent="lobby"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 1000.0
+margin_top = -290.0
+margin_right = 2000.0
+margin_bottom = 110.0
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="choose" type="Label" parent="lobby/blue"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -500.0
+margin_bottom = -200.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 15 )
+text = "ИИ"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="b" type="TextureRect" parent="lobby/blue"]
+modulate = Color( 0.376471, 0.188235, 0.752941, 1 )
+show_behind_parent = true
+margin_left = 100.0
+margin_top = -200.0
+margin_right = 900.0
+margin_bottom = 600.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="about" type="Label" parent="lobby"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2600.0
+margin_top = 1200.0
+margin_bottom = 1695.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Вы находитесь в лобби, вы можете начать игру в одиночку
+или дождаться пока к вам подключатся игроки.
+Каждый сам выбирает команды, которыми он может управлять, 
+нетронутые останутся под управлением искусственного интеллекта.
+Нажмите по нужной команде чтобы
+взять её управление или вернуть под командование ИИ."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GO" type="TextureButton" parent="lobby"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -593.0
+margin_top = 510.0
+margin_right = 594.0
+margin_bottom = 1024.0
+texture_normal = SubResource( 285 )
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GO" type="Label" parent="lobby/GO"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -30.0
+margin_right = -395.0
+margin_bottom = -202.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/font = ExtResource( 2 )
+text = "GO"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loading1" type="Sprite" parent="."]
+position = Vector2( 1100, -400 )
+texture = ExtResource( 12 )
+offset = Vector2( 0, -65 )
+
+[node name="Loading2" type="Sprite" parent="."]
+position = Vector2( -1100, -400 )
+texture = ExtResource( 12 )
+offset = Vector2( 0, -65 )
+flip_h = true
+
+[node name="where" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -775.0
+margin_top = 1810.0
+margin_right = 775.0
+margin_bottom = 2240.0
+focus_mode = 0
+enabled_focus_mode = 0
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="where"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1033.0
+margin_bottom = -309.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = ExtResource( 1 )
+text = "куда я попал?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="where"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -3000.0
+margin_top = -3415.0
+margin_bottom = -1915.0
+rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Это мой школьный проект за 9 класс: Шахматы на троих.
+
+Если я смог тебя заинтересовать, то расскажу немного об игре.
+
+Обязательно ли нужно 3 игрока? 
+Нет, в игре есть ИИ, с которым можно сразиться двум игрокам или в одиночку, а также присутствуют места для зрителей.
+
+В чём цель?
+Победителем станет одна из трёх команд, дожившая до конца игры.
+
+Как ходят фигуры?
+Для необычных шахмат необычные фигуры, как ходит каждая вы увидите в справке внутри игры.
+
+Что такое индикаторы?
+Любая фигура, которой угрожает другая фигура подсвечена белым индикатором.
+
+Где брать ферзя?
+Изначально ферзя ни у кого из игроков нет, его можно получить только если ваш лучник/воин (вы позже узнаете кто это) попадёт на территорию противника (она выделена цветом).
+
+Рокировка будет?
+При столкновении ЛЮБЫХ двух союзных фигур они поменяются местами."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../login")
+reset_on_save = false
+anims/JH_to_lobby = SubResource( 4 )
+anims/RESET = SubResource( 2 )
+anims/loading = SubResource( 237 )
+anims/login_to_JH = SubResource( 3 )
+
+[node name="update" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="mouse_entered" from="Panel/dis" to="." method="_on_dis_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/dis" to="." method="_on_dis_mouse_exited"]
+[connection signal="pressed" from="Panel/dis" to="." method="_on_dis_pressed"]
+[connection signal="mouse_entered" from="Panel/vk" to="." method="_on_vk_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/vk" to="." method="_on_vk_mouse_exited"]
+[connection signal="pressed" from="Panel/vk" to="." method="_on_vk_pressed"]
+[connection signal="pressed" from="login/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="online_JH/Control/minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="online_JH/Control/plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="online_JH/Control/to_lobby" to="." method="_on_to_lobby_pressed"]
+[connection signal="timeout" from="online_JH/Control/to_lobby/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="lobby/red" to="." method="_on_r_pressed"]
+[connection signal="pressed" from="lobby/green" to="." method="_on_g_pressed"]
+[connection signal="pressed" from="lobby/blue" to="." method="_on_b_pressed"]
+[connection signal="pressed" from="lobby/GO" to="." method="_on_GO_pressed"]
+[connection signal="pressed" from="where" to="." method="_on_where_pressed"]
+[connection signal="timeout" from="update" to="." method="_on_update_timeout"]

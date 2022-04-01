@@ -1,0 +1,21 @@
+king
+elef
+rook
+mage
+
+красным точкам -- синий ход
+зелёным точкам -- красный ход
+синим точкам -- зелёный ход
+
+func _on_Area2D_body_entered(body):
+	print(st.camness)
+	if st.camness == true:
+		if body is KinematicBody2D:
+			on_point.append(body)
+		if len(on_point) >= 2:
+			on_point[0].queue_free()
+			on_point.remove(0)
+
+func _on_Area2D_body_exited(body):
+	if body is KinematicBody2D:
+		on_point.clear()

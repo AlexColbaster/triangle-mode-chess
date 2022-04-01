@@ -1,0 +1,344 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://interface/font70.tres" type="DynamicFont" id=2]
+[ext_resource path="res://pic/gradient.png" type="Texture" id=4]
+[ext_resource path="res://pic/support pic/king.png" type="Texture" id=6]
+[ext_resource path="res://interface/font100.tres" type="DynamicFont" id=8]
+[ext_resource path="res://scrs/Button.gd" type="Script" id=10]
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( -2.38794, -0.215515, 2001.25, 1009.41 )
+margin_top = 300.187
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Node
+
+
+func _on_btn_king_pressed():
+	$pic.texture = preload(\"res://pic/support pic/king.png\")
+	$Label.text = \"king\"
+func _on_btn_mage_pressed():
+	$pic.texture = preload(\"res://pic/support pic/mage.png\")
+	$Label.text = \"mage\"
+func _on_btn_warer_pressed():
+	$pic.texture = preload(\"res://pic/support pic/warer.png\")
+	$Label.text = \"warer\"
+func _on_btn_acher_pressed():
+	$pic.texture = preload(\"res://pic/support pic/acher.png\")
+	$Label.text = \"acher\"
+func _on_btn_elef_pressed():
+	$pic.texture = preload(\"res://pic/support pic/elef.png\")
+	$Label.text = \"elef\"
+func _on_btn_rook_pressed():
+	$pic.texture = preload(\"res://pic/support pic/rook.png\")
+	$Label.text = \"rook\"
+func _on_btn_queen_pressed():
+	$pic.texture = preload(\"res://pic/support pic/queen.png\")
+	$Label.text = \"queen\"
+"
+
+[node name="support" type="Node2D"]
+
+[node name="panel" type="Panel" parent="."]
+modulate = Color( 0.968627, 0.968627, 0.968627, 1 )
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -560.0
+margin_top = -330.0
+margin_right = 5040.0
+margin_bottom = 3070.0
+rect_scale = Vector2( 0.2, 0.2 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="support" type="Node2D" parent="."]
+script = SubResource( 2 )
+
+[node name="warer" type="Node2D" parent="support"]
+position = Vector2( -380, -240 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="btn_warer" type="TextureButton" parent="support/warer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1000.0
+margin_top = -300.0
+margin_right = 1000.0
+margin_bottom = 400.0
+expand = true
+script = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="support/warer/btn_warer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1600.0
+margin_bottom = -560.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "warer"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="acher" type="Node2D" parent="support"]
+position = Vector2( -380, -160 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="btn_acher" type="TextureButton" parent="support/acher"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1000.0
+margin_top = -300.0
+margin_right = 1000.0
+margin_bottom = 400.0
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="support/acher/btn_acher"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1600.0
+margin_bottom = -560.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "acher"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="elef" type="Node2D" parent="support"]
+position = Vector2( -380, -80 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="btn_elef" type="TextureButton" parent="support/elef"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1000.0
+margin_top = -300.0
+margin_right = 1000.0
+margin_bottom = 400.0
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="support/elef/btn_elef"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1600.0
+margin_bottom = -560.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "elef"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rook" type="Node2D" parent="support"]
+position = Vector2( -380, 0 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="btn_rook" type="TextureButton" parent="support/rook"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1000.0
+margin_top = -300.0
+margin_right = 1000.0
+margin_bottom = 400.0
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="support/rook/btn_rook"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1600.0
+margin_bottom = -560.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "rook"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="king" type="Node2D" parent="support"]
+position = Vector2( -380, 80 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="btn_king" type="TextureButton" parent="support/king"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1000.0
+margin_top = -300.0
+margin_right = 1000.0
+margin_bottom = 400.0
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="support/king/btn_king"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1600.0
+margin_bottom = -560.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "king"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="queen" type="Node2D" parent="support"]
+position = Vector2( -380, 160 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="btn_queen" type="TextureButton" parent="support/queen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1000.0
+margin_top = -300.0
+margin_right = 1000.0
+margin_bottom = 400.0
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="support/queen/btn_queen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1600.0
+margin_bottom = -560.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "queen"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mage" type="Node2D" parent="support"]
+position = Vector2( -380, 240 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="btn_mage" type="TextureButton" parent="support/mage"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1000.0
+margin_top = -300.0
+margin_right = 1000.0
+margin_bottom = 400.0
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="support/mage/btn_mage"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1600.0
+margin_bottom = -560.0
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "mage"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pic" type="Sprite" parent="support"]
+position = Vector2( 150, 0 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+
+[node name="Label2" type="Label" parent="support"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = -338.0
+margin_right = 516.0
+margin_bottom = -225.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "support"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="support"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = 210.0
+margin_right = 516.0
+margin_bottom = 323.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "king"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="support/warer/btn_warer" to="support" method="_on_btn_warer_pressed"]
+[connection signal="pressed" from="support/acher/btn_acher" to="support" method="_on_btn_acher_pressed"]
+[connection signal="pressed" from="support/elef/btn_elef" to="support" method="_on_btn_elef_pressed"]
+[connection signal="pressed" from="support/rook/btn_rook" to="support" method="_on_btn_rook_pressed"]
+[connection signal="pressed" from="support/king/btn_king" to="support" method="_on_btn_king_pressed"]
+[connection signal="pressed" from="support/queen/btn_queen" to="support" method="_on_btn_queen_pressed"]
+[connection signal="pressed" from="support/mage/btn_mage" to="support" method="_on_btn_mage_pressed"]
